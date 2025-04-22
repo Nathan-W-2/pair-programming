@@ -2,8 +2,10 @@
 #include <assert.h>
 using namespace std;
 #include "Point.h"
+#include "Line.h"
 
 void testPoints();
+void testLine();
 
 int main()
 {
@@ -68,4 +70,10 @@ void testPoints()
 
     // RationalNumber num7(10, 1);
     // assert(num7.toString() == "10");
+}
+
+void testLine() {
+    Line line1(Point(1.2, 3.4), Point(5.6, 7.8));
+    cout << line1.toString() << endl;
+    assert(line1.toString() == "Point 1: [X: 1.2, Y: 3.4], Point 2: [X: 5.6, Y: 7.8]");
 }
