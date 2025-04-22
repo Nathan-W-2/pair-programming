@@ -19,6 +19,31 @@ void testPoints()
     cout << point1.toString() << endl; 
     assert(point1.toString() == "X: 1.2, Y: 3.4");
 
+    Point point2(1.24529043, 3.4394493);
+    cout << point2.toString() << endl; 
+    assert(point2.toString() == "X: 1.2, Y: 3.4");
+
+    Point point3(1.24, 3.46);
+    cout << point3.toString() << endl; 
+    assert(point3.toString() == "X: 1.2, Y: 3.5");
+
+    Point point4(1, 3);
+    cout << point4.toString() << endl; 
+    assert(point4.toString() == "X: 1.0, Y: 3.0");
+
+    Point point5(-1.2, -3.4);
+    cout << point5.toString() << endl; 
+    assert(point5.toString() == "X: -1.2, Y: -3.4");
+
+    Point point6(0, 0);
+    cout << point6.toString() << endl; 
+    assert(point6.toString() == "X: 0.0, Y: 0.0");
+
+    Point point7(0.3, 0.4);
+    cout << point7.toString() << endl; 
+    assert(point7.toString() == "X: 0.3, Y: 0.4");
+
+
     // RationalNumber num2(3, 4);
     // assert(num2.toString() == "3/4");
 
