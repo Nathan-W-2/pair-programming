@@ -9,6 +9,7 @@ void testPoints();
 void testLine();
 void testLength();
 void testPointOnLine();
+void testParallel();
 
 int main()
 {
@@ -16,6 +17,7 @@ int main()
     testLine();
     testLength();
     testPointOnLine();
+    testParallel();
 
     cout<<"All tests pass"<<endl;
     return 0;
@@ -127,4 +129,22 @@ void testPointOnLine(){
     assert(line3.isPointOnLine(point4) == 1);
     assert(line3.isPointOnLine(point5) == 0);
 
+}
+
+void testParallel(){
+    Line line1(Point(1,1), Point(10,10));
+    Line line2(Point(0,5), Point(10,15));
+
+    assert(line1.isParallel(line1, line2) == 1);
+
+    Line line3(Point(0,0), Point(1.4, 10.283));
+    Line line4(Point(1, 12.345), Point(2.2, 21.159));
+    assert(line3.isParallel(line3, line4) == 1);
+
+    Line line6(Point(1, 12.345), Point(50.2, 21.159));
+    assert(line3.isParallel(line3, line6) == 0);
+
+    Line negSlope1(Point(-4,10), Point(4, -10));
+    Line negSlope2(Point(-1, -2.5), Point(-1.6, -1.0));
+    assert(negSlope1.isParallel(negSlope1, negSlope2) == 1);
 }

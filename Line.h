@@ -11,6 +11,8 @@ public:
 	float length();
 	bool isPointOnLine(Point p);
 	float length(Point a, Point b);
+	
+	bool isParallel(Line a, Line b);
 
 	Point getStartPoint();
 	Point getEndPoint();

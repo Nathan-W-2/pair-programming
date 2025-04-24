@@ -45,3 +45,10 @@ bool Line::isPointOnLine(Point p){
 
 	return abs(totalLength - (seg1Length + seg2Length)) < 0.0001;
 }
+
+bool Line::isParallel(Line a, Line b){
+	float slopeA = (a.endPoint.getYCoord() - a.startPoint.getYCoord()) / (a.endPoint.getXCoord() - a.startPoint.getXCoord());
+	float slopeB = (b.endPoint.getYCoord() - b.startPoint.getYCoord()) / (b.endPoint.getXCoord() - b.startPoint.getXCoord());
+
+	return abs(slopeA - slopeB) < .0001;
+}
