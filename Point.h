@@ -5,6 +5,7 @@ using namespace std;
 class Point
 {
 public:
+    Point();
     Point(float x, float y);
     
     string toString();

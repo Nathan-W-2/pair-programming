@@ -1,10 +1,15 @@
 #include "Line.h"
 #include <string>
 
-Line::Line(Point start, Point end) 
-	:startPoint(start), :endPoint(end)
-{
+Line::Line(){
+	startPoint = Point(0,0);
+	endPoint = Point(0,0);
+}
 
+Line::Line(Point start, Point end) 	
+{
+	startPoint = start;
+	endPoint = end;
 }
 
 Point Line::getStartPoint() {

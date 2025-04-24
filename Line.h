@@ -3,8 +3,9 @@
 #include <string>
 #include "Point.h"
 
-class Line {
+class Line : public Point{
 public:
+	Line();
 	Line(Point start, Point end);
 	string toString();
 
