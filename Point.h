@@ -9,6 +9,9 @@ public:
     Point(float x, float y);
     
     string toString();
+
+    float getXCoord();
+    float getYCoord();
 private:
     float x;
     float y;

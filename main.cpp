@@ -1,5 +1,6 @@
 #include <iostream>
 #include <assert.h>
+#include <cmath>
 using namespace std;
 #include "Point.h"
 #include "Line.h"
@@ -10,6 +11,7 @@ void testLine();
 int main()
 {
     testPoints();
+    testLine();
 
     cout<<"All tests pass"<<endl;
     return 0;
@@ -76,4 +78,29 @@ void testLine() {
     Line line1(Point(1.2, 3.4), Point(5.6, 7.8));
     cout << line1.toString() << endl;
     assert(line1.toString() == "Point 1: [X: 1.2, Y: 3.4], Point 2: [X: 5.6, Y: 7.8]");
+
+    Line line2(Point(-1.2, -3.4), Point(-5.6, -7.8));
+    cout << line2.toString() << endl;
+    assert(line2.toString() == "Point 1: [X: -1.2, Y: -3.4], Point 2: [X: -5.6, Y: -7.8]");
+
+    Line line3(Point(1, 3), Point(5, 7));
+    cout << line3.toString() << endl;
+    assert(line3.toString() == "Point 1: [X: 1.0, Y: 3.0], Point 2: [X: 5.0, Y: 7.0]");
+
+    
+
+    
+
+}
+
+void testLength(){
+    Line line4(Point(123.433, 445.456), Point(432.543, 456.787));
+    cout << line4.length() << endl;
+    assert(abs(line4.length() - 309.31760968461) < 0.001);
+
+    Line line1(Point(1.2, 3.4), Point(5.6, 7.8));
+    cout << line1.length() << endl;
+    assert(abs(line1.length() - 6.2225396744416) < 0.001);
+
+    
 }

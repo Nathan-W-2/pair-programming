@@ -38,4 +38,12 @@ string Point::toString()
 
     return ss.str();
 }
+
+float Point::getXCoord(){
+    return x;
+}
+
+float Point::getYCoord(){
+    return y;
+}
 //--

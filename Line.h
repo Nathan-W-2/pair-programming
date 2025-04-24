@@ -8,6 +8,8 @@ public:
 	Line();
 	Line(Point start, Point end);
 	string toString();
+	float length();
+	bool isPointOnLine(Point p);
 
 	Point getStartPoint();
 	Point getEndPoint();

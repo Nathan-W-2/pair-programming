@@ -1,5 +1,6 @@
 #include "Line.h"
 #include <string>
+#include <cmath>
 
 Line::Line(){
 	startPoint = Point(0,0);
@@ -23,4 +24,14 @@ Point Line::getEndPoint() {
 string Line::toString() {
 	//Point 1: [X: 1.2, Y: 3.4], Point 2: [X: 5.6, Y: 7.8]
 	return "Point 1: [" + startPoint.toString() + "], Point 2: [" + endPoint.toString() + "]";
+}
+
+float Line::length(){
+
+	float sqRt = sqrt((startPoint.getXCoord() -  endPoint.getXCoord()) * (startPoint.getXCoord() - endPoint.getXCoord()) + (startPoint.getYCoord() - endPoint.getYCoord()) * (startPoint.getYCoord() - endPoint.getYCoord()));
+	return sqRt;
+}
+
+bool Line::isPointOnLine(Point p){
+	
 }
