@@ -43,5 +43,5 @@ bool Line::isPointOnLine(Point p){
 	
 	float totalLength = length();
 
-	return abs(totalLength - (seg1Length + seg2Length)) < 0.001;
+	return abs(totalLength - (seg1Length + seg2Length)) < 0.0001;
 }

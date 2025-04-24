@@ -118,5 +118,13 @@ void testPointOnLine(){
 
     assert(line2.isPointOnLine(Point(1,1)) == 1);
     assert(line2.isPointOnLine(Point(5,5)) == 1);
-    
+
+    Line line3(Point(103.2, 33.40), Point(345.62, 7.8456));
+    Point point3(132.6,30.30096);
+    Point point4(186.4, 24.62994);
+    Point point5(240, 19.1);
+    assert(line3.isPointOnLine(point3) == 1);
+    assert(line3.isPointOnLine(point4) == 1);
+    assert(line3.isPointOnLine(point5) == 0);
+
 }
