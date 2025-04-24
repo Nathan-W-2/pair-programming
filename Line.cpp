@@ -32,6 +32,16 @@ float Line::length(){
 	return sqRt;
 }
 
+float Line::length(Point a, Point b){
+	float sqRt = sqrt((a.getXCoord() -  b.getXCoord()) * (a.getXCoord() - b.getXCoord()) + (a.getYCoord() - b.getYCoord()) * (a.getYCoord() - b.getYCoord()));
+	return sqRt;
+}
+
 bool Line::isPointOnLine(Point p){
+	float seg1Length = length(startPoint, p);
+	float seg2Length = length(p, endPoint);
 	
+	float totalLength = length();
+
+	return abs(totalLength - (seg1Length + seg2Length)) < 0.001;
 }

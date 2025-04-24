@@ -7,11 +7,15 @@ using namespace std;
 
 void testPoints();
 void testLine();
+void testLength();
+void testPointOnLine();
 
 int main()
 {
     testPoints();
     testLine();
+    testLength();
+    testPointOnLine();
 
     cout<<"All tests pass"<<endl;
     return 0;
@@ -101,6 +105,18 @@ void testLength(){
     Line line1(Point(1.2, 3.4), Point(5.6, 7.8));
     cout << line1.length() << endl;
     assert(abs(line1.length() - 6.2225396744416) < 0.001);
+}
 
+void testPointOnLine(){
+    Line line1(Point(1,1), Point(5,5));
+    Point point1(2,2);
+    assert(line1.isPointOnLine(point1) == 1);
+
+    Line line2(Point(1,1), Point(5,5));
+    Point point2(3,4);
+    assert(line2.isPointOnLine(point2) == 0);
+
+    assert(line2.isPointOnLine(Point(1,1)) == 1);
+    assert(line2.isPointOnLine(Point(5,5)) == 1);
     
 }

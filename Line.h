@@ -10,6 +10,7 @@ public:
 	string toString();
 	float length();
 	bool isPointOnLine(Point p);
+	float length(Point a, Point b);
 
 	Point getStartPoint();
 	Point getEndPoint();
