@@ -13,6 +13,8 @@ public:
 	float length(Point a, Point b);
 	
 	bool isParallel(Line a, Line b);
+	bool doesIntersect(Line a, Line b);
+	float crossProduct(Point a, Point b);
 
 	Point getStartPoint();
 	Point getEndPoint();

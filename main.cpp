@@ -10,6 +10,7 @@ void testLine();
 void testLength();
 void testPointOnLine();
 void testParallel();
+void testIntersect();
 
 int main()
 {
@@ -18,6 +19,7 @@ int main()
     testLength();
     testPointOnLine();
     testParallel();
+    testIntersect();
 
     cout<<"All tests pass"<<endl;
     return 0;
@@ -52,32 +54,6 @@ void testPoints()
     Point point7(0.3, 0.4);
     cout << point7.toString() << endl; 
     assert(point7.toString() == "X: 0.3, Y: 0.4");
-
-
-    // RationalNumber num2(3, 4);
-    // assert(num2.toString() == "3/4");
-
-    // RationalNumber num3(3, -4);
-    // assert(num3.toString() == "-3/4");
-
-    // RationalNumber num4(-3, 4);
-    // assert(num4.toString() == "-3/4");
-
-    // RationalNumber num5(-3, -4);
-    // assert(num5.toString() == "3/4");
-
-    // try
-    // {
-    //     RationalNumber num6(3, 0);
-    //     assert(false);
-    // }
-    // catch(...)
-    // {
-    //     //do nothing
-    // }
-
-    // RationalNumber num7(10, 1);
-    // assert(num7.toString() == "10");
 }
 
 void testLine() {
@@ -92,11 +68,6 @@ void testLine() {
     Line line3(Point(1, 3), Point(5, 7));
     cout << line3.toString() << endl;
     assert(line3.toString() == "Point 1: [X: 1.0, Y: 3.0], Point 2: [X: 5.0, Y: 7.0]");
-
-    
-
-    
-
 }
 
 void testLength(){
@@ -147,4 +118,25 @@ void testParallel(){
     Line negSlope1(Point(-4,10), Point(4, -10));
     Line negSlope2(Point(-1, -2.5), Point(-1.6, -1.0));
     assert(negSlope1.isParallel(negSlope1, negSlope2) == 1);
+}
+
+void testIntersect() {
+    Line line1(Point(2.6,5.3), Point(-2.45,-4.2));
+    Line line2(Point(2.4,1.6), Point(-5,-2));
+
+    assert(line1.doesIntersect(line1, line2) == true);
+
+    Line line3(Point(2.4,1.6), Point(2.9,-1.1));
+
+    assert(line1.doesIntersect(line1, line3) == false);
+
+    Line line4(Point(2.6,5.3), Point(4,1.5));
+    Line line5(Point(4.1,2.4), Point(2.9,-1.1));
+
+    assert(line4.doesIntersect(line4, line5) == true);
+
+    Line line6(Point(0.9,5.6), Point(6.5,2.2));
+    Line line7(Point(4.1,2.43), Point(2.9,1.3));
+
+    assert(line6.doesIntersect(line6, line7) == false);
 }

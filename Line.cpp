@@ -52,3 +52,29 @@ bool Line::isParallel(Line a, Line b){
 
 	return abs(slopeA - slopeB) < .0001;
 }
+
+bool Line::doesIntersect(Line line1, Line line2){
+	Point a = line1.startPoint; 
+	Point b = line1.endPoint; 
+	Point c = line2.startPoint; 
+	Point d = line2.endPoint; 
+	
+	Point r = Point(b.getXCoord() - a.getXCoord(), b.getYCoord() - a.getYCoord());
+	Point s = Point(d.getXCoord() - c.getXCoord(), d.getYCoord() - c.getYCoord());
+	Point cMinusA = Point(c.getXCoord() - a.getXCoord(), c.getYCoord() - a.getYCoord());
+	float rCrossS = line1.crossProduct(r, s);
+	float u = line1.crossProduct(cMinusA, r) / rCrossS;
+	float t = line1.crossProduct(cMinusA, s) / rCrossS;
+
+	if ((u > 0 and u < 1) and (t > 0 and t < 1)) {
+		return true; 
+	} else {
+		return false; 
+	}
+}
+
+
+float Line::crossProduct(Point a, Point b) 
+{
+	return a.getXCoord() * b.getYCoord() - a.getYCoord() * b.getXCoord();
+}
